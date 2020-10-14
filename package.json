@@ -1,0 +1,18 @@
+{
+	"name": "discord-role-inviter-bot",
+	"author": "j9108c",
+	"main": "./controller/bot.js",
+	"scripts": {
+		"dev": "node ./controller/bot.js",
+		"prod_start": "pm2 start ./controller/bot.js --name discord-role-inviter-bot",
+		"prod_stop": "pm2 stop ./controller/bot.js"
+	},
+	"devDependencies": {},
+	"dependencies": {
+		"discord.js": "^12.2.0",
+		"nodemailer": "^6.4.6",
+		"request": "^2.88.2",
+		"winston": "^3.2.1",
+		"xlsx": "^0.16.0"
+	}
+}
