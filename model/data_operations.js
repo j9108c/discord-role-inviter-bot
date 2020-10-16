@@ -32,18 +32,18 @@ function create_invites(channel, data, load) {
 			maxUses: 1,
 			maxAge: 0 // link expiry in seconds. 0 = forever, max is 86400 = 24h
 		})
-			.then((invite) => {
-				// console.log(object.username);
-				// console.log(object.email);
-				// console.log(invite.url);
-				logger.log.info(`username: ${object.username}, email: ${object.email}, invite: ${invite.url}`);
-				data_with_inv.push({
-					username: object.username,
-					email: object.email,
-					invite: invite.url
-				});
-			})
-			.catch((error) => logger.log.error(error));
+		.then((invite) => {
+			// console.log(object.username);
+			// console.log(object.email);
+			// console.log(invite.url);
+			logger.log.info(`username: ${object.username}, email: ${object.email}, invite: ${invite.url}`);
+			data_with_inv.push({
+				username: object.username,
+				email: object.email,
+				invite: invite.url
+			});
+		})
+		.catch((error) => logger.log.error(error));
 	});
 
 	setTimeout(() => {
