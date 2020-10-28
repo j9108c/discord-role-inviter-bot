@@ -236,13 +236,13 @@ function invite(bot, msg, email_info, admin_ids, channel_id) {
 		});
 
 		if (!found_email_info) {
-			msg.channel.send("warning: [email_info] server secrets config is not set")
+			msg.channel.send("warning: [email_info] server secrets config is not set");
 		}
 		if (!found_admin_ids) {
-			msg.channel.send("warning: [admin_ids] server secrets config is not set")
+			msg.channel.send("warning: [admin_ids] server secrets config is not set");
 		}
 		if (!found_channel_id) {
-			msg.channel.send("warning: [channel_id] server secrets config is not set")
+			msg.channel.send("warning: [channel_id] server secrets config is not set");
 		}
 		msg.channel.send("error: one or more server secrets configs are not set. please use the set command to set up the server secrets configs, then try the invite command again");
 	}

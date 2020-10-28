@@ -50,7 +50,7 @@ bot.on("guildMemberAdd", async (member) => {
 
 	const used_invite = new_invites.find((inv) => cached_invites.get(inv.code).uses < inv.uses);
 	
-	if (used_invite == undefined) { // undefined because max uses (1) has been used up and the invite has been removed from the discord API
+	if (used_invite == undefined) { // undefined bc max uses (1) has been used up and the invite has been removed from the discord API
 		let role = member.guild.roles.cache.find((role) => role.name == "beta tester");
 		member.roles.add(role);
 	}
