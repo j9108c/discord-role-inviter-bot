@@ -23,9 +23,7 @@ bot.on("ready", () => {
 
 	// load all invites for all guilds and save them to the cache
 	bot.guilds.cache.forEach((guild) => { // cache is a collection of all the guilds (servers)
-		guild.fetchInvites() // returns a promise
-			.then((invites) => invite_cache.set(guild.id, invites))
-			.catch((error) => logger.log.error(error));
+		guild.fetchInvites().then((invites) => invite_cache.set(guild.id, invites)).catch((error) => logger.log.error(error));
 	});
 	
 	// fill server secrets configs
@@ -87,17 +85,19 @@ bot.on("message", (msg) => {
 						} else {
 							msg.channel.send(`error: [set ${args[1]}] is not a command`);
 						}
-					break;
+						break;
 					case "invite":
 						commands.invite(bot, msg, email_info, admin_ids, channel_id);
-					break;
+						break;
 					case "get":
 						if (args[1] == "log") {
 							commands.get_log(msg);
 						} else {
 							msg.channel.send(`error: [get ${args[1]}] is not a command`);
 						}
-					break;
+						break;
+					default:
+						break;
 				}
 
 				// admin upload file to bot for dl

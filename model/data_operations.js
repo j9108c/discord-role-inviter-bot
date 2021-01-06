@@ -31,8 +31,7 @@ function create_invites(channel, data, load) {
 			unique: true,
 			maxUses: 1,
 			maxAge: 0 // link expiry in seconds. 0 = forever, max is 86400 = 24h
-		})
-		.then((invite) => {
+		}).then((invite) => {
 			// console.log(object.username);
 			// console.log(object.email);
 			// console.log(invite.url);
@@ -42,8 +41,7 @@ function create_invites(channel, data, load) {
 				email: object.email,
 				invite: invite.url
 			});
-		})
-		.catch((error) => logger.log.error(error));
+		}).catch((error) => logger.log.error(error));
 	});
 
 	setTimeout(() => {
